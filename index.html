@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>POKEMON TCG</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css"  href="css/defualt.css" />
+  <link rel="stylesheet"  href="css/Side_menu.css" />
+  
+   
+  </head>
+<body>
+
+  
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+  <div class="hand"><img id="card1" name="Charizard" ondragstart="drag(event)" draggable="true" src="imgs/charizard.jpg" /></div>
+  <div class="hand"><img id="card2" name="Raichu" ondragstart="drag(event)" draggable="true" src="imgs/raichu.jpg" /></div>
+  <div class="hand"><img id="card3" name="Beedrill" ondragstart="drag(event)" draggable="true" src="imgs/beedrill.jpg" /></div>
+  <div class="hand"><img id="card4" name="Blastoise" ondragstart="drag(event)" draggable="true" src="imgs/blastoise.jpg" /></div>
+  <div class="hand"><img id="card5" name="Hitmonchan" ondragstart="drag(event)" draggable="true" src="imgs/hitmonchan.jpg" /></div>
+  <div class="hand"><img id="card6" name="" ondragstart="drag(event)" draggable="true" src="imgs/back.jpg" /></div>
+  
+</div>
+  
+
+  
+<div class="ActiveCARDS">
+
+		<div class="Player_ONE_OPTIONS">
+					<button>Option One</button>
+					<button>Option Two</button>
+		</div>
+		
+		<div class="Player_TWO_OPTIONS">
+					<button>Option One</button>
+					<button>Option Two</button>
+		</div>
+		
+			<div ondrop="drop1(event)" ondragover="allowDrop(event)" class="Active_CARD_ONE CARD"></div>
+			
+
+			<div ondrop="drop2(event)" ondragover="allowDrop(event)" class="Active_CARD_TWO CARD"></div>
+			
+			
+			<div class="INFO_ONE"></div>
+			<div class="INFO_TWO"></div>
+			
+			<div class="SHOW_HAND"><button style="border-radius: 10px;" onclick="openNav()">SHOW HAND</button></div>
+  </div>
+ 
+ 
+ <script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+	ev.dataTransfer.setData("name", ev.target.name);
+}
+
+function drop1(ev) {
+    ev.preventDefault();
+	var name = ev.dataTransfer.getData("name");
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+	
+	$(".INFO_ONE").text(name);
+}
+
+function drop2(ev) {
+    ev.preventDefault();
+	var name = ev.dataTransfer.getData("name");
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+	
+	$(".INFO_TWO").text(name);
+}
+
+</script>
+ 
+ 
+ 
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "400px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>
