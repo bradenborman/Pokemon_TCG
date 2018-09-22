@@ -22,8 +22,6 @@
 .hand {
 	border: 2px solid black;
 	background-color: blue;
-	height: 140px;
-	width: 100px;
 	margin-left: 20px;
 	margin-top: 20px;
 	display: inline-block;
@@ -34,6 +32,6 @@
 
 .hand img {
 	background-size: cover;
-	height: 100%;
-	width: 100%;
+	height: 140px;
+	width: 100px;
 }

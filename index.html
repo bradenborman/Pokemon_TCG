@@ -9,8 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css"  href="css/defualt.css" />
   <link rel="stylesheet"  href="css/Side_menu.css" />
-  
-   
+    
   </head>
 <body>
 
@@ -22,9 +21,7 @@
   <div class="hand"><img id="card2" name="Raichu" ondragstart="drag(event)" draggable="true" src="imgs/raichu.jpg" /></div>
   <div class="hand"><img id="card3" name="Beedrill" ondragstart="drag(event)" draggable="true" src="imgs/beedrill.jpg" /></div>
   <div class="hand"><img id="card4" name="Blastoise" ondragstart="drag(event)" draggable="true" src="imgs/blastoise.jpg" /></div>
-  <div class="hand"><img id="card5" name="Hitmonchan" ondragstart="drag(event)" draggable="true" src="imgs/hitmonchan.jpg" /></div>
-  <div class="hand"><img id="card6" name="" ondragstart="drag(event)" draggable="true" src="imgs/back.jpg" /></div>
-  
+  <div class="hand"><img id="card5" name="Hitmonchan" ondragstart="drag(event)" draggable="true" src="imgs/hitmonchan.jpg" /></div> 
 </div>
   
 
@@ -32,87 +29,29 @@
 <div class="ActiveCARDS">
 
 		<div class="Player_ONE_OPTIONS">
-					<button>Option One</button>
-					<button>Option Two</button>
+					<button onclick="Fight1()">Move set 1</button>
+					<button onclick="Fight2()">Move set 2</button>
 		</div>
 		
 		<div class="Player_TWO_OPTIONS">
-					<button>Option One</button>
-					<button>Option Two</button>
+					<button onclick="faintPlayer(1)">Faint Player1 test</button>
+					
 		</div>
 		
-			<div ondrop="drop1(event)" ondragover="allowDrop(event)" class="Active_CARD_ONE CARD"></div>
+			<div id="a1" ondrop="drop1(event)" ondragover="allowDrop(event)" class="Active_CARD_ONE CARD"></div>
 			
 
-			<div ondrop="drop2(event)" ondragover="allowDrop(event)" class="Active_CARD_TWO CARD"></div>
+			<div id="a2" class="Active_CARD_TWO CARD"></div>
 			
 			
 			<div class="INFO_ONE"></div>
 			<div class="INFO_TWO"></div>
 			
-			<div class="SHOW_HAND"><button style="border-radius: 10px;" onclick="openNav()">SHOW HAND</button></div>
+			<div id="toggleHand" class="SHOW_HAND"><button style="border-radius: 10px;" onclick="openNav()">SHOW HAND</button></div>
   </div>
  
- 
- <script>
- 
- var isCardEmpty_ONE = true;
- var isCardEmpty_TWO = true;
- 
- 
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-	ev.dataTransfer.setData("name", ev.target.name);
-}
-
-function drop1(ev) {
-
-	if(isCardEmpty_ONE)
-	{
-	isCardEmpty_ONE = false
-	ev.preventDefault();
-	var name = ev.dataTransfer.getData("name");
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-	$(".INFO_ONE").text(name);
-	}else{
-		alert("Already Card")
-	}
-
-   
-}
-
-function drop2(ev) {
-    if(isCardEmpty_TWO)
-	{
-	isCardEmpty_TWO = false
-	ev.preventDefault();
-	var name = ev.dataTransfer.getData("name");
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-	$(".INFO_TWO").text(name);
-	}else{
-		alert("Already Card")
-	}
-
-}
-
-</script>
- 
- 
- 
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "400px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
+<script src="script/sidenav.js"></script>
+<script src="script/dragDrop.js"></script>
+<script src="script/pokemonStats.js"></script>
 </body>
 </html>
