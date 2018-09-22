@@ -55,6 +55,11 @@
  
  
  <script>
+ 
+ var isCardEmpty_ONE = true;
+ var isCardEmpty_TWO = true;
+ 
+ 
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -65,21 +70,35 @@ function drag(ev) {
 }
 
 function drop1(ev) {
-    ev.preventDefault();
+
+	if(isCardEmpty_ONE)
+	{
+	isCardEmpty_ONE = false
+	ev.preventDefault();
 	var name = ev.dataTransfer.getData("name");
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-	
 	$(".INFO_ONE").text(name);
+	}else{
+		alert("Already Card")
+	}
+
+   
 }
 
 function drop2(ev) {
-    ev.preventDefault();
+    if(isCardEmpty_TWO)
+	{
+	isCardEmpty_TWO = false
+	ev.preventDefault();
 	var name = ev.dataTransfer.getData("name");
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-	
 	$(".INFO_TWO").text(name);
+	}else{
+		alert("Already Card")
+	}
+
 }
 
 </script>
