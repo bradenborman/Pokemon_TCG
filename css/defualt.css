@@ -80,7 +80,7 @@ body, html {
 
 .INFO_ONE {
 	position: absolute;
-	bottom: 370px;
+	bottom: 400px;
 	left: 0;
 	height: 200px;
 	width: 300px;
@@ -94,7 +94,7 @@ body, html {
 }
 .INFO_TWO {
 	position: absolute;
-	bottom: 370px;
+	bottom: 0px;
 	right: 0;
 	height: 200px;
 	width: 300px;

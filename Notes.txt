@@ -6,5 +6,6 @@ NOTES:
 			
 			2) Create New Object with Constuctor
 			
-			3) Add to If statment to return (getPokemonData)
+			
+	
 			
