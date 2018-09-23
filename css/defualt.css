@@ -109,12 +109,15 @@ body, html {
 
 .SHOW_HAND {
 	position: absolute;
-	bottom: 510px;
-	left: 230px;
+	bottom: 10px;
+	left: 325px;
 	height: 200px;
 	width: 100px;
 	text-align: center;
 	margin: 20px;
 	padding: 3px;
 	border-radius: 10px;
+}
+.SHOW_HAND:hover {
+	cursor: pointer;
 }

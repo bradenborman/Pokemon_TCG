@@ -7,5 +7,9 @@ NOTES:
 			2) Create New Object with Constuctor
 			
 			
+			**Should be visable -- update moves now
+			
+			3) Add to case stemetn and make new function 
+			
 	
 			

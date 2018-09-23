@@ -14,11 +14,11 @@
  var Hitmonchan = new Pokemon("Hitmonchan", 70, "Psychic", 2, 33, "Jab", "Special Punch");
  var Pidgeotto = new Pokemon("Pidgeotto", 60, "Lightning", 1, 36, "Whirlwind", "Mirror Move");
  var Alakazam = new Pokemon("Alakazam", 80, "Psychic", 3, 42, "POK\'E POWER", "Confuse Ray");
- var Gyarados = new Pokemon("Gyarados", 100, "Grass", 3, 41, "Dragon Rage", "Bubblebeam");
+ var Gyarados = new Pokemon("Gyarados", 100, "Grass", 3, 41, "Dragon Rage", "Bubblebeam");	//Moves Added tocase and Functions ==> Need to get status changer created
  var Ninetales = new Pokemon("Ninetales", 80, "Water", 1, 32, "Lure", "Fire Blast");
  var Mewtwo = new Pokemon("Mewtwo", 60, "Psychic", 3, 53, "Psychic", "Barrier"); 
- var Jigglypuff = new Pokemon("Jigglypuff", 60, "Fighting", 1, 14, "Lullaby", "Pound"); 
- var Pikachu = new Pokemon("Pikachu", 40, "Fighting", 1, 12, "Gnaw", "Thunder Jolt"); 
+ var Jigglypuff = new Pokemon("Jigglypuff", 60, "Fighting", 1, 14, "Lullaby", "Pound");  //Moves Added tocase and Functions ==> Need to get status changer created
+ var Pikachu = new Pokemon("Pikachu", 40, "Fighting", 1, 12, "Gnaw", "Thunder Jolt");  //Moves Added => DONE
  var Nidoking = new Pokemon("Nidoking", 90, "Psychic", 3, 48, "Thrash", "Toxic"); 
  var Chansey = new Pokemon("Chansey", 120, "Fighting", 3, 55, "Scrunhc", "Double-Edge"); 
  var Arcanine = new Pokemon("Arcanine", 100, "Water", 3, 45, "Flamerthrower", "Take-Down"); 
@@ -54,9 +54,13 @@
 	'<img id="card22" name="Water" ondragstart="drag(event)" draggable="true" src="imgs/water.jpg" />',
 	'<img id="card23" name="Water" ondragstart="drag(event)" draggable="true" src="imgs/water.jpg" />',
 	'<img id="card24" name="Arcanine" ondragstart="drag(event)" draggable="true" src="imgs/arcanine.jpg" />',
-	'<img id="card25" name="Onix" ondragstart="drag(event)" draggable="true" src="imgs/onix.jpg" />'
+	'<img id="card25" name="Onix" ondragstart="drag(event)" draggable="true" src="imgs/onix.jpg" />',
+	'<img id="card26" name="Lightning" ondragstart="drag(event)" draggable="true" src="imgs/lightning.jpg" />',
+	'<img id="card27" name="Lightning" ondragstart="drag(event)" draggable="true" src="imgs/lightning.jpg" />',
+	'<img id="card28" name="Lightning" ondragstart="drag(event)" draggable="true" src="imgs/lightning.jpg" />',
+	'<img id="card29" name="Water" ondragstart="drag(event)" draggable="true" src="imgs/water.jpg" />',
 ]
- 
+
  
  
 function Pokemon(name, hp, weakness, retreat, level, move1, move2) {
@@ -129,11 +133,41 @@ function displayInfo(Pokemon) {
 	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + Pokemon.hp + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"
 	
 	if(Pokemon.EnergyAdded.length > 0)
-		basicInfo += "<hr>Attached Energy: " + Pokemon.EnergyAdded.join(" ")
+		basicInfo += getSymbols(Pokemon);
 	
 	return basicInfo
 }
 
+
+
+
+function getSymbols(Pokemon) {
+	
+	var returnString = "<hr>Energy Attached<br>";
+	
+	for(var i = 0; i < Pokemon.EnergyAdded.length; i++){
+		switch(Pokemon.EnergyAdded[i]) {
+		case "Grass":
+			returnString += "<span style='color: green;' class='glyphicon glyphicon-leaf'></span> "
+			break;
+		case "Water":
+			returnString += '<span style="color: Blue;" class="glyphicon glyphicon-tint"></span> '
+			break;
+		case "Fire":
+			returnString += '<span style="color: Orange;" class="glyphicon glyphicon-fire"></span> '
+			break;	
+		case "Lightning":
+			returnString += '<span style="color: Yellow;" class="glyphicon glyphicon-flash"></span> '
+			break;	
+		case "Psychic":
+			returnString += '<span  style="color: purple;" class="glyphicon glyphicon-eye-open"></span> '
+			break;	
+		default:
+			returnString += ""
+		}
+	}
+	return returnString;
+}
 
 
 function clearHand() {
@@ -145,13 +179,15 @@ function clearHand() {
 function Fight1() {
 	isEnergyAlreadyAdded = false;
 	hasAlreadyDrawn = false;
-	alert(ACTIVE_POKEMON.move1)
+		
+	getAttack(ACTIVE_POKEMON.move1)
+	
 }
 
 function Fight2() {
 	isEnergyAlreadyAdded = false;
 	hasAlreadyDrawn = false;
-	alert(ACTIVE_POKEMON.move2)
+	getAttack(ACTIVE_POKEMON.move2)
 }
 
 function faintPlayer(player) {
@@ -212,15 +248,7 @@ function takeDamage() {
 		faintPlayer(1)
 }
 
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////
-
 
  var DECK_COM = [
 	'<img id="card1" name="Charizard" ondragstart="drag(event)" draggable="true" src="imgs/back.jpg" />'
@@ -258,6 +286,115 @@ $(".ActiveCARDS").on("dblclick", function(){
 });;
 
 load()
+
+
+
+
+
+
+function doDamageToComputer(amount) {
+	alert("You did " + amount + " damage to com")
+}
+
+
+
+function getAttack(attack) {
+	
+	
+	switch(attack) {
+		
+		case "Rock Throw":
+			ROCK_THROW()
+			break;
+
+		case "Harden":
+			HARDEN()
+			break;
+			
+		case "Dragon Rage":
+			DRAGON_RAGE()
+			break;
+			
+		case "Bubblebeam":
+			BUBBLEBEAM()
+			break;	
+			
+		case "Pound":
+			POUND()
+			break;
+
+		case "Lullaby":
+			LULLABY()
+			break;
+		
+		case "Gnaw":
+			GNAW()
+			break;
+		
+		case "Thunder Jolt":
+			THUNDER_JOLT()
+			break;
+			
+		default:
+			
+	}
+$(".INFO_ONE").html(displayInfo(ACTIVE_POKEMON));
+}
+
+
+function THUNDER_JOLT() {
+	var Ele = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Lightning").length;
+	if(ACTIVE_POKEMON.eneryAttached >= 2 && Ele >= 1) {
+		if(Math.floor(Math.random() * 2) == 1)
+			ACTIVE_POKEMON.hp -= 10;
+		doDamageToComputer(30)
+	}
+		 
+}
+
+function GNAW() {
+	if(ACTIVE_POKEMON.eneryAttached >= 1)
+		doDamageToComputer(10) 
+}
+
+function LULLABY() {
+	if(ACTIVE_POKEMON.eneryAttached >= 1) { }
+		//statusChange("S", 1)
+}
+
+function POUND() {
+	if(ACTIVE_POKEMON.eneryAttached >= 2) 
+		doDamageToComputer(20) 	
+}
+
+function DRAGON_RAGE() {
+	var waters = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Water").length;
+	if(waters >= 3) doDamageToComputer(50) 	
+}
+
+function BUBBLEBEAM() {
+	var waters = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Water").length;
+	if(waters >= 4) {
+		doDamageToComputer(40) 
+	   //statusChange("P", .5)
+	} 	
+}
+
+function ROCK_THROW() {
+	//1 F => 10 
+}
+
+function HARDEN() {
+	//2 F => C
+}
+
+
+
+
+
+
+
+
 
 
 
