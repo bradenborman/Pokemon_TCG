@@ -1,0 +1,10 @@
+NOTES:
+
+		ADDING NEW CARD:
+		
+			1) Add to array of <img> 
+			
+			2) Create New Object with Constuctor
+			
+			3) Add to If statment to return (getPokemonData)
+			

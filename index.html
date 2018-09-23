@@ -15,13 +15,14 @@
 
   
   <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  
-  <div class="hand"><img id="card1" name="Charizard" ondragstart="drag(event)" draggable="true" src="imgs/charizard.jpg" /></div>
-  <div class="hand"><img id="card2" name="Raichu" ondragstart="drag(event)" draggable="true" src="imgs/raichu.jpg" /></div>
-  <div class="hand"><img id="card3" name="Beedrill" ondragstart="drag(event)" draggable="true" src="imgs/beedrill.jpg" /></div>
-  <div class="hand"><img id="card4" name="Blastoise" ondragstart="drag(event)" draggable="true" src="imgs/blastoise.jpg" /></div>
-  <div class="hand"><img id="card5" name="Hitmonchan" ondragstart="drag(event)" draggable="true" src="imgs/hitmonchan.jpg" /></div> 
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div id="CARDS_IN_HAND">
+  <div class="hand"></div>
+  <div class="hand"></div>
+  <div class="hand"></div>
+  <div class="hand"></div>
+  <div class="hand"></div> 
+  </div>
 </div>
   
 
@@ -35,7 +36,7 @@
 		
 		<div class="Player_TWO_OPTIONS">
 					<button onclick="faintPlayer(1)">Faint Player1 test</button>
-					
+					<button onclick="draw(1)">Draw Card test</button>
 		</div>
 		
 			<div id="a1" ondrop="drop1(event)" ondragover="allowDrop(event)" class="Active_CARD_ONE CARD"></div>
