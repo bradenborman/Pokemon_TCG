@@ -134,6 +134,11 @@ function getCard() {
 	return toReturn
 }
 
+function LoadAll() {
+	do {
+		draw(1)
+	}while(DECK.length != 0)
+}
 
 
 function draw(player) {
