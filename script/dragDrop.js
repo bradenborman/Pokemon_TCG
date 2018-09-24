@@ -28,6 +28,9 @@
  var FIRE = new Pokemon("Fire");
  var Water = new Pokemon("Water")
  var Lightning = new Pokemon("Lightning")
+ var Psychic = new Pokemon("Psychic")
+ var Fighting = new Pokemon("Fighting")
+ 
  
   var DECK = [
 	'<img id="card1" name="Charizard" ondragstart="drag(event)" draggable="true" src="imgs/charizard.jpg" />',
@@ -59,6 +62,10 @@
 	'<img id="card27" name="Lightning" ondragstart="drag(event)" draggable="true" src="imgs/lightning.jpg" />',
 	'<img id="card28" name="Lightning" ondragstart="drag(event)" draggable="true" src="imgs/lightning.jpg" />',
 	'<img id="card29" name="Water" ondragstart="drag(event)" draggable="true" src="imgs/water.jpg" />',
+	'<img id="card30" name="Psychic" ondragstart="drag(event)" draggable="true" src="imgs/psychic.jpg" />',
+	'<img id="card31" name="Psychic" ondragstart="drag(event)" draggable="true" src="imgs/psychic.jpg" />',
+	'<img id="card32" name="Fighting" ondragstart="drag(event)" draggable="true" src="imgs/fighting.jpg" />',
+	'<img id="card33" name="Fighting" ondragstart="drag(event)" draggable="true" src="imgs/fighting.jpg" />',
 ]
 
  
@@ -72,7 +79,7 @@ function Pokemon(name, hp, weakness, retreat, level, move1, move2) {
 	this.move1 = move1;
 	this.move2 = move2;
     this.eneryAttached = 0;
-	this.isEnergy = this.name == "Grass" || this.name == "Fire" || this.name == "Water" || this.name == "Lightning" ? true : false
+	this.isEnergy = this.name == "Grass" || this.name == "Fire" || this.name == "Water" || this.name == "Lightning" || this.name == "Psychic" || this.name == "Fighting" ? true : false
 	this.EnergyAdded = [];
 	
 	ALLPOKEMON.push(this)
@@ -131,6 +138,8 @@ function addEnergy(Pokemon, energyCard) {
 
 function displayInfo(Pokemon) {
 	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + Pokemon.hp + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"
+	$("#btnMove1").text(Pokemon.move1);
+	$("#btnMove2").text(Pokemon.move2);
 	
 	if(Pokemon.EnergyAdded.length > 0)
 		basicInfo += getSymbols(Pokemon);
@@ -162,6 +171,11 @@ function getSymbols(Pokemon) {
 		case "Psychic":
 			returnString += '<span  style="color: purple;" class="glyphicon glyphicon-eye-open"></span> '
 			break;	
+		case "Fighting":
+			returnString += '<span style="color: brown;" class="glyphicon glyphicon-record"></span> '
+			break;	
+		
+		
 		default:
 			returnString += ""
 		}
@@ -194,6 +208,7 @@ function faintPlayer(player) {
 var cardHolder = null;
 isEnergyAlreadyAdded = false;
 hasAlreadyDrawn = false;	
+ACTIVE_POKEMON = null;
 		if(player == 1){
 			cardHolder = document.getElementById("a1");
 			isCardEmpty_ONE = true
@@ -204,7 +219,6 @@ hasAlreadyDrawn = false;
 		}
 		
 		cardHolder.innerHTML = ""
-		
 }
 
 

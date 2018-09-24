@@ -4,7 +4,7 @@ function openNav() {
     
 	if(!isOPEN){
 		isOPEN = true
-		document.getElementById("mySidenav").style.width = "400px";
+		document.getElementById("mySidenav").style.width = "420px";
 	}else{
 		closeNav()
 	}

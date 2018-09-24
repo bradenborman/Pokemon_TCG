@@ -9,7 +9,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css"  href="css/defualt.css" />
   <link rel="stylesheet"  href="css/Side_menu.css" />
-    
+    <link rel="icon" href="imgs/logo.jpg">
+
   </head>
 <body>
 
@@ -31,13 +32,13 @@
 <div class="ActiveCARDS">
 
 		<div class="Player_ONE_OPTIONS">
-					<button onclick="Fight1()">Move set 1</button>
-					<button onclick="Fight2()">Move set 2</button>
+					<button id="btnMove1" onclick="Fight1()"></button>
+					<button id="btnMove2" onclick="Fight2()"></button>
 		</div>
 		
 		<div class="Player_TWO_OPTIONS">
-					<button onclick="faintPlayer(1)">Faint Player1 test</button>
-					<button onclick="draw(1)">Draw Card test</button>
+					<button onclick="faintPlayer(1)">Faint Player 1</button>
+					<button onclick="draw(1)">Draw Card</button>
 					<button onclick="takeDamage()">Take Damage</button>
 		</div>
 		
