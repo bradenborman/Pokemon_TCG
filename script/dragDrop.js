@@ -112,7 +112,6 @@ function drop1(ev) {
 		addEnergy(ACTIVE_POKEMON, Pokemon)
 		ev.preventDefault();
 		ev.target.appendChild(document.getElementById(data));
-		closeNav()
 	}
 		
 	
@@ -123,7 +122,6 @@ function drop1(ev) {
 		ev.target.appendChild(document.getElementById(data));
 		$(".INFO_ONE").html(displayInfo(Pokemon));
 		ACTIVE_POKEMON = Pokemon
-		closeNav()
 	}
 	clearHand()
 }
@@ -157,22 +155,22 @@ function getSymbols(Pokemon) {
 	for(var i = 0; i < Pokemon.EnergyAdded.length; i++){
 		switch(Pokemon.EnergyAdded[i]) {
 		case "Grass":
-			returnString += "<span style='color: green;' class='glyphicon glyphicon-leaf'></span> "
+			returnString += '<img name="GrassIcon" src="imgs/symbols/grass.png" style="width: 35px; height: 35px;" /> '
 			break;
 		case "Water":
-			returnString += '<span style="color: Blue;" class="glyphicon glyphicon-tint"></span> '
+			returnString += '<img name="WaterIcon" src="imgs/symbols/water.png" style="width: 35px; height: 35px;" /> '
 			break;
 		case "Fire":
-			returnString += '<span style="color: Orange;" class="glyphicon glyphicon-fire"></span> '
+			returnString += '<img name="FireIcon" src="imgs/symbols/fire.png" style="width: 35px; height: 35px;" /> '
 			break;	
 		case "Lightning":
-			returnString += '<span style="color: Yellow;" class="glyphicon glyphicon-flash"></span> '
+			returnString += '<img name="LightningIcon" src="imgs/symbols/lightning.png" style="width: 35px; height: 35px;" /> '
 			break;	
 		case "Psychic":
-			returnString += '<span  style="color: purple;" class="glyphicon glyphicon-eye-open"></span> '
+			returnString += '<img name="PsychicIcon" src="imgs/symbols/psychic.png" style="width: 35px; height: 35px;" /> '
 			break;	
 		case "Fighting":
-			returnString += '<span style="color: brown;" class="glyphicon glyphicon-record"></span> '
+			returnString += '<img name="FightingIcon" src="imgs/symbols/fightingIcon.png" style="width: 35px; height: 35px;" /> '
 			break;	
 		
 		
