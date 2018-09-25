@@ -32,22 +32,23 @@
  var Nidoranbg = new Pokemon("Nidorang", "Grass", 60, "Psychic", 1, 13, "Fury Swipes", "Call for Family", null); 
  var Nidorina = new Pokemon("Nidorina", "Grass", 70, "Psychic", 1, 24, "Supersonic", "Double Kick", "Nidorang"); 
  var Nidoqueen = new Pokemon("Nidoqueen", "Grass", 90, "Psychic", 3, 43, "Boyfriends", "MegaPunch", "Nidorina"); 
+ var Clefairy = new Pokemon("Clefairy", "Normal", 40, "Fighting", 1, 14, "Sing", "Metronome", null); 
+ var Clefable = new Pokemon("Clefable", "Normal", 70, "Fighting", 2, 34, "Metronome", "Minimize", "Clefairy"); 
+ var Vulpix = new Pokemon("Vulpix", "Fire", 50, "Water", 1, 11, "Confuse Ray", "Confuse Ray", null); 
+ var Ninetales = new Pokemon("Ninetales", "Fire", 80, "Water", 1, 32, "Lure", "Fire Blast", "Vulpix");
+ var Jigglypuff = new Pokemon("Jigglypuff", "Normal", 60, "Fighting", 1, 14, "Lullaby", "Pound", null);  //Moves Added tocase and Functions ==> Need to get status changer created
+ var Wigglytuff = new Pokemon("Wigglytuff", "Normal", 80, "Fighting", 2, 36, "Lullaby", "Do the Wave", "Jigglypuff");
+ var Paras = new Pokemon("Paras", "Grass", 40, "Fire", 1, 8, "Scratch", "Spore", null);
  
  
  
  var Hitmonchan = new Pokemon("Hitmonchan", "Fighting", 70, "Psychic", 2, 33, "Jab", "Special Punch", null);
  var Alakazam = new Pokemon("Alakazam", "Psychic", 80, "Psychic", 3, 42, "POK\'E POWER", "Confuse Ray");
  var Gyarados = new Pokemon("Gyarados", "Water", 100, "Grass", 3, 41, "Dragon Rage", "Bubblebeam");	//Moves Added tocase and Functions ==> Need to get status changer created
- var Ninetales = new Pokemon("Ninetales", "Fire", 80, "Water", 1, 32, "Lure", "Fire Blast");
  var Mewtwo = new Pokemon("Mewtwo", "Psychic", 60, "Psychic", 3, 53, "Psychic", "Barrier", null); 
- var Jigglypuff = new Pokemon("Jigglypuff", "Normal", 60, "Fighting", 1, 14, "Lullaby", "Pound", null);  //Moves Added tocase and Functions ==> Need to get status changer created
-
- 
  var Chansey = new Pokemon("Chansey", "Normal", 120, "Fighting", 3, 55, "Scrunhc", "Double-Edge", null); 
  var Arcanine = new Pokemon("Arcanine", "Fire", 100, "Water", 3, 45, "Flamerthrower", "Take-Down"); 
  var Onix = new Pokemon("Onix", "Ground", 90, "Grass", 3, 12, "Rock Throw", "Harden", null); 
-
-
 
  var Grass = new Pokemon("Grass"); 
  var Fire = new Pokemon("Fire");
@@ -56,9 +57,6 @@
  var Psychic = new Pokemon("Psychic")
  var Fighting = new Pokemon("Fighting")
  
-
-
-
 
 function Pokemon(name, type, hp, weakness, retreat, level, move1, move2, child) {
 	this.name = name;

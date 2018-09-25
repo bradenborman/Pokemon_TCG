@@ -56,7 +56,7 @@ function drop1(ev) {
 	}
 	
 	clearHand()
-	
+	greyCards()
 }
 
 
@@ -132,8 +132,19 @@ function greyCards() {
 $('#CARDS_IN_HAND img').each(function(){
     var NAME = $(this).attr('name')
 	
-	if(NAME == "Pidgey" || NAME == "Hitmonchan" || NAME == "Weedle"  )
-		$(this).addClass("GRAYOUT")
+	
+	if(isCardEmpty_ONE) {
+		if(!isFirstForm(NAME))
+			$(this).addClass("GRAYOUT")
+		else
+			$(this).removeClass("GRAYOUT")
+	}
+	else{
+		if(!isEnergyORNewFrom(NAME))
+			$(this).addClass("GRAYOUT")
+		else
+			$(this).removeClass("GRAYOUT")
+	}
 });
 }
 
@@ -170,6 +181,7 @@ function draw(player) {
 			document.getElementById("CARDS_IN_HAND").innerHTML += '<div class="hand">' + getCard() +  '</div>'
 			hasAlreadyDrawn = true;
 		}	
+		greyCards()
 }
 
 //////////////////////////////////////////////////////////////////////

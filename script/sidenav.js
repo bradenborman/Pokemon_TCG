@@ -4,7 +4,8 @@ function openNav() {
     
 	if(!isOPEN){
 		isOPEN = true
-		document.getElementById("mySidenav").style.width = "420px";
+		document.getElementById("mySidenav").style.width = "435px";
+		greyCards()
 	}else{
 		closeNav()
 	}

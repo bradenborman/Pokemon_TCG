@@ -58,4 +58,30 @@
 	'<img id="card56" name="Nidorang" ondragstart="drag(event)" draggable="true" src="imgs/nidorang.jpg" />',	
 	'<img id="card57" name="Nidorina" ondragstart="drag(event)" draggable="true" src="imgs/nidorina.jpg" />',	
 	'<img id="card58" name="Nidoqueen" ondragstart="drag(event)" draggable="true" src="imgs/nidoqueen.jpg" />',	
+	'<img id="card59" name="Clefairy" ondragstart="drag(event)" draggable="true" src="imgs/clefairy.jpg" />',
+	'<img id="card60" name="Clefable" ondragstart="drag(event)" draggable="true" src="imgs/clefable.jpg" />',	
+	'<img id="card61" name="Vulpix" ondragstart="drag(event)" draggable="true" src="imgs/vulpix.jpg" />',
+	'<img id="card62" name="Wigglytuff" ondragstart="drag(event)" draggable="true" src="imgs/wigglytuff.jpg" />',
+	'<img id="card63" name="Paras" ondragstart="drag(event)" draggable="true" src="imgs/paras.jpg" />',
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
