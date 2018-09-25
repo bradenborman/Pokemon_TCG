@@ -133,3 +133,11 @@ body, html {
 .SHOW_HAND:hover {
 	cursor: pointer;
 }
+
+#ENERGY_CARDS1 {
+	z-index: 3253;
+	position: absolute;
+	bottom: 610px;
+	left: 365px;
+	max-width: 270px;
+}

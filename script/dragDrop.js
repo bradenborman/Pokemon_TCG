@@ -75,18 +75,19 @@ function displayInfo(Pokemon) {
 	$("#btnMove1").text(Pokemon.move1);
 	$("#btnMove2").text(Pokemon.move2);
 	
+	
 	if(Pokemon.EnergyAdded.length > 0)
-		basicInfo += getSymbols(Pokemon);
+		$("#ENERGY_CARDS1").html(getSymbols(Pokemon));
+	
+	
 	
 	return basicInfo
 }
 
 
-
-
 function getSymbols(Pokemon) {
 	
-	var returnString = "<hr>Energy Attached<br>";
+	var returnString = ""
 	
 	for(var i = 0; i < Pokemon.EnergyAdded.length; i++){
 		switch(Pokemon.EnergyAdded[i]) {

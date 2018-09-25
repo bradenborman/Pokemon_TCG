@@ -30,6 +30,7 @@ function faintPlayer(player) {
 			
 			cardHolder.innerHTML = ""
 			greyCards()
+			$("#ENERGY_CARDS1").html("")
 }
 
 
