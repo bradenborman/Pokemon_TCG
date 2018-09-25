@@ -38,5 +38,11 @@ function getAttack(attack) {
 		default:
 			
 	}
-$(".INFO_ONE").html(displayInfo(ACTIVE_POKEMON));
+	
+	output("A", attack)
+	
+	$(".INFO_ONE").html(displayInfo(ACTIVE_POKEMON));
+
+
+
 }

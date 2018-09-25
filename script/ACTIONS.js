@@ -2,8 +2,7 @@
 
 function Fight1() {
 		isEnergyAlreadyAdded = false;
-		hasAlreadyDrawn = false;
-			
+		hasAlreadyDrawn = false;	
 		getAttack(ACTIVE_POKEMON.move1)
 		
 	}
@@ -31,11 +30,13 @@ function faintPlayer(player) {
 			cardHolder.innerHTML = ""
 			greyCards()
 			$("#ENERGY_CARDS1").html("")
+			output("SlotEmpty")
 }
 
 
 function takeDamage() {
 	var x = (Math.floor((Math.random() * 4) + 1) * 10);
+	output("TD", x)
 	ACTIVE_POKEMON.hp -= x;
 	$(".INFO_ONE").html(displayInfo(ACTIVE_POKEMON));
 	

@@ -28,13 +28,15 @@ function drop1(ev) {
 	var data = ev.dataTransfer.getData("text");
 	var Pokemon = getPokemonData(name)
 	var isValidE = false;
-			
+	var didEvolve = false;
+	
 	if(Pokemon.isEnergy) //&& !isEnergyAlreadyAdded
 	{
 		isEnergyAlreadyAdded = true;
 		addEnergy(ACTIVE_POKEMON, Pokemon)
 		ev.preventDefault();
 		ev.target.appendChild(document.getElementById(data));
+		output("E", Pokemon.name)
 	}
 		
 	if(!isCardEmpty_ONE && !Pokemon.isEnergy)
@@ -43,6 +45,8 @@ function drop1(ev) {
 			faintPlayer(1)
 			isCardEmpty_ONE = true	
 		    $('#a1').html(findRightImg(data))
+			didEvolve = true;
+			output("EV", Pokemon)
 			//CALL COPY ENERGY CARDS() 
 		}
 
@@ -50,9 +54,13 @@ function drop1(ev) {
 	{
 		isCardEmpty_ONE = false
 		ev.preventDefault();
+		output("D", Pokemon.name)
 		ev.target.appendChild(document.getElementById(data));
 		$(".INFO_ONE").html(displayInfo(Pokemon));
 		ACTIVE_POKEMON = Pokemon
+		if(didEvolve)
+			output("EV", Pokemon)
+		
 	}
 	
 	clearHand()
@@ -159,6 +167,7 @@ function load() {
 		$(".hand").eq(5).html(getCard())
 		
 		$(".Active_CARD_TWO").html(getCOMCard())
+		
 }
 
 
@@ -215,8 +224,3 @@ $(".ActiveCARDS").on("dblclick", function(){
 
 	greyCards()
 });;
-
-
-function doDamageToComputer(amount) {
-	alert("You did " + amount + " damage to com")
-}

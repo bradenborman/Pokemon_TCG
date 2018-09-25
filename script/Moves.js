@@ -1,4 +1,13 @@
 
+function doDamageToComputer(amount) {
+	setTimeout(function(){
+		$(".INFO_TWO").html(amount + " points of damage was done.")
+	}, 2200);
+	setTimeout(function(){
+		output("COM")
+	}, 3800);
+}
+
 
 	function THUNDER_JOLT() {
 		var Ele = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Lightning").length;
@@ -27,7 +36,7 @@
 
 	function DRAGON_RAGE() {
 		var waters = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Water").length;
-		if(waters >= 3) doDamageToComputer(50) 	
+			if(waters >= 3) doDamageToComputer(50) 	
 	}
 
 	function BUBBLEBEAM() {
