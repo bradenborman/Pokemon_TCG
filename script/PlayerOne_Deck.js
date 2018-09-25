@@ -53,4 +53,9 @@
 	'<img id="card51" name="Arbok" ondragstart="drag(event)" draggable="true" src="imgs/arbok.jpg" />',
 	'<img id="card52" name="Sandshrew" ondragstart="drag(event)" draggable="true" src="imgs/sandshrew.jpg" />',
 	'<img id="card53" name="Sandslash" ondragstart="drag(event)" draggable="true" src="imgs/sandslash.jpg" />',	
+	'<img id="card54" name="Nidoranb" ondragstart="drag(event)" draggable="true" src="imgs/nidoran.jpg" />',	
+	'<img id="card55" name="Nidorino" ondragstart="drag(event)" draggable="true" src="imgs/nidorino.jpg" />',
+	'<img id="card56" name="Nidorang" ondragstart="drag(event)" draggable="true" src="imgs/nidorang.jpg" />',	
+	'<img id="card57" name="Nidorina" ondragstart="drag(event)" draggable="true" src="imgs/nidorina.jpg" />',	
+	'<img id="card58" name="Nidoqueen" ondragstart="drag(event)" draggable="true" src="imgs/nidoqueen.jpg" />',	
 ]

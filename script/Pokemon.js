@@ -26,7 +26,12 @@
  var Raichu = new Pokemon("Raichu", "Lightning", 80, "Fighting", 1, 40, "Agility", "Thunder", "Pikachu");
  var Sandshrew = new Pokemon("Sandshrew", "Ground", 40, "Grass", 1, 12, "Sand-attack", "Sand-attack", null);
  var Sandslash = new Pokemon("Sandslash", "Ground", 70, "Grass", 1, 33, "Slash", "Fury Swipes", "Sandshrew");
-
+ var Nidoranb = new Pokemon("Nidoranb", "Grass", 40, "Psychic", 1, 20, "Horn Harzard", "Horn Harzard", null); 
+ var Nidorino = new Pokemon("Nidorino", "Grass", 60, "Psychic", 1, 25, "Double Kick", "Horn Drill", "Nidoranb"); 
+ var Nidoking = new Pokemon("Nidoking", "Grass", 90, "Psychic", 3, 48, "Thrash", "Toxic", "Nidorino"); 
+ var Nidoranbg = new Pokemon("Nidorang", "Grass", 60, "Psychic", 1, 13, "Fury Swipes", "Call for Family", null); 
+ var Nidorina = new Pokemon("Nidorina", "Grass", 70, "Psychic", 1, 24, "Supersonic", "Double Kick", "Nidorang"); 
+ var Nidoqueen = new Pokemon("Nidoqueen", "Grass", 90, "Psychic", 3, 43, "Boyfriends", "MegaPunch", "Nidorina"); 
  
  
  
@@ -37,7 +42,7 @@
  var Mewtwo = new Pokemon("Mewtwo", "Psychic", 60, "Psychic", 3, 53, "Psychic", "Barrier", null); 
  var Jigglypuff = new Pokemon("Jigglypuff", "Normal", 60, "Fighting", 1, 14, "Lullaby", "Pound", null);  //Moves Added tocase and Functions ==> Need to get status changer created
 
- var Nidoking = new Pokemon("Nidoking", "Grass", 90, "Psychic", 3, 48, "Thrash", "Toxic"); 
+ 
  var Chansey = new Pokemon("Chansey", "Normal", 120, "Fighting", 3, 55, "Scrunhc", "Double-Edge", null); 
  var Arcanine = new Pokemon("Arcanine", "Fire", 100, "Water", 3, 45, "Flamerthrower", "Take-Down"); 
  var Onix = new Pokemon("Onix", "Ground", 90, "Grass", 3, 12, "Rock Throw", "Harden", null); 
