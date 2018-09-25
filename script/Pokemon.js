@@ -39,7 +39,11 @@
  var Jigglypuff = new Pokemon("Jigglypuff", "Normal", 60, "Fighting", 1, 14, "Lullaby", "Pound", null);  //Moves Added tocase and Functions ==> Need to get status changer created
  var Wigglytuff = new Pokemon("Wigglytuff", "Normal", 80, "Fighting", 2, 36, "Lullaby", "Do the Wave", "Jigglypuff");
  var Paras = new Pokemon("Paras", "Grass", 40, "Fire", 1, 8, "Scratch", "Spore", null);
- 
+ var Parasect = new Pokemon("Parasect", "Grass", 60, "Fire", 1, 28, "Spore", "Slash", "Paras");
+ var Diglett = new Pokemon("Diglett", "Ground", 30, "Grass", 0, 9, "Dig", "Mud Slap", null);
+ var Dugtrio = new Pokemon("Dugtrio", "Ground", 60, "Grass", 2, 36, "Slash", "Earthquake", "Diglett");
+ var Meowth = new Pokemon("Meowth", "Normal", 50, "Fighting", 1, 15, "Payday", "Payday", null);
+
  
  
  var Hitmonchan = new Pokemon("Hitmonchan", "Fighting", 70, "Psychic", 2, 33, "Jab", "Special Punch", null);

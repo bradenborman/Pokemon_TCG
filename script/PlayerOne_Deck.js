@@ -63,8 +63,12 @@
 	'<img id="card61" name="Vulpix" ondragstart="drag(event)" draggable="true" src="imgs/vulpix.jpg" />',
 	'<img id="card62" name="Wigglytuff" ondragstart="drag(event)" draggable="true" src="imgs/wigglytuff.jpg" />',
 	'<img id="card63" name="Paras" ondragstart="drag(event)" draggable="true" src="imgs/paras.jpg" />',
+	'<img id="card64" name="Parasect" ondragstart="drag(event)" draggable="true" src="imgs/parasect.jpg" />',
+	'<img id="card65" name="Diglett" ondragstart="drag(event)" draggable="true" src="imgs/diglett.jpg" />',
+	'<img id="card65" name="Diglett" ondragstart="drag(event)" draggable="true" src="imgs/diglett.jpg" />',
+	'<img id="card66" name="Dugtrio" ondragstart="drag(event)" draggable="true" src="imgs/dugtrio.jpg" />',
+	'<img id="card67" name="Meowth" ondragstart="drag(event)" draggable="true" src="imgs/meowth.jpg" />',
 ]
-
 
 
 
