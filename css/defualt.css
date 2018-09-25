@@ -1,8 +1,17 @@
 
+
+.GRAYOUT {
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+	opacity: .5;
+}
+
 body, html {
 	height: 100%;
 	width: 100%;
-	background-color: lightblue;
+	background-image: url("background.jpg");
+	background-size: cover;
+    background-repeat: no-repeat, repeat;
 }
 
 .ActiveCARDS {
@@ -112,15 +121,16 @@ body, html {
 
 .SHOW_HAND {
 	position: absolute;
-	bottom: 10px;
-	left: 325px;
-	height: 200px;
-	width: 100px;
+	bottom: 155px;
+	left: 360px;
 	text-align: center;
 	margin: 20px;
-	padding: 3px;
+	padding-left: 3px;
+	padding-right: 3px;
 	border-radius: 10px;
+	background-color: yellow;
 }
+
 .SHOW_HAND:hover {
 	cursor: pointer;
 }

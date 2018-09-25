@@ -120,10 +120,22 @@ function getSymbols(Pokemon) {
 
 function clearHand() {
 	$('.hand').each(function() {
-    if ($(this).find('img').length) { }else { $(this).css("display", "none"); }
-});
+		if ($(this).find('img').length) { 
+		
+		}else { $(this).css("display", "none"); }
+	});
 }
 
+
+function greyCards() {
+
+$('#CARDS_IN_HAND img').each(function(){
+    var NAME = $(this).attr('name')
+	
+	if(NAME == "Pidgey" || NAME == "Hitmonchan" || NAME == "Weedle"  )
+		$(this).addClass("GRAYOUT")
+});
+}
 
 function load() {
 	
@@ -193,8 +205,8 @@ function drop2(ev) {
 }
 
 $(".ActiveCARDS").on("dblclick", function(){
-   // for(var y = 0; y < ALLPOKEMON.length; y++)
-//	alert(ALLPOKEMON[y].name)
+
+	greyCards()
 });;
 
 
