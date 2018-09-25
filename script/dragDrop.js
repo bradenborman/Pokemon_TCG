@@ -5,9 +5,8 @@
  var isEnergyAlreadyAdded = false;
  var hasAlreadyDrawn = false;
  var ALLPOKEMON = []
- 
- 
- 
+ var PickedTpyes = [];
+ var deckCopy=DECK.slice();
  
  function getPokemonData(name) {	
 	    for(var y = 0; y < ALLPOKEMON.length; y++)
@@ -25,11 +24,11 @@ function drag(ev) {
 }
 
 function drop1(ev) {
-
 	var name = ev.dataTransfer.getData("name");
 	var data = ev.dataTransfer.getData("text");
 	var Pokemon = getPokemonData(name)
-	
+	var isValidE = false;
+			
 	if(Pokemon.isEnergy) //&& !isEnergyAlreadyAdded
 	{
 		isEnergyAlreadyAdded = true;
@@ -38,7 +37,15 @@ function drop1(ev) {
 		ev.target.appendChild(document.getElementById(data));
 	}
 		
-	
+	if(!isCardEmpty_ONE && !Pokemon.isEnergy)
+		if(checkForEvolution(Pokemon))
+		{
+			faintPlayer(1)
+			isCardEmpty_ONE = true	
+		    $('#a1').html(findRightImg(data))
+			//CALL COPY ENERGY CARDS() 
+		}
+
 	if(isCardEmpty_ONE)
 	{
 		isCardEmpty_ONE = false
@@ -47,8 +54,13 @@ function drop1(ev) {
 		$(".INFO_ONE").html(displayInfo(Pokemon));
 		ACTIVE_POKEMON = Pokemon
 	}
+	
 	clearHand()
+	
 }
+
+
+
 
 function addEnergy(Pokemon, energyCard) {
 	Pokemon.eneryAttached++;
@@ -191,10 +203,6 @@ function doDamageToComputer(amount) {
 }
 
 
-
-
-
-load()
 
 
 
