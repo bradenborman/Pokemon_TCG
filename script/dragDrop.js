@@ -170,11 +170,9 @@ function getCard() {
 }
 
 function LoadAll() {
-	do {
-		draw(1)
-	}while(DECK.length != 0)
+	do {draw(1)} 
+	while(DECK.length != 0)
 }
-
 
 function draw(player) {
 		if(player == 1 && DECK.length > 0) { //&& !hasAlreadyDrawn
@@ -184,12 +182,9 @@ function draw(player) {
 		greyCards()
 }
 
-//////////////////////////////////////////////////////////////////////
-
  var DECK_COM = [
 	'<img id="card1" name="Charizard" ondragstart="drag(event)" draggable="true" src="imgs/back.jpg" />'
 ]
-
 
 function getCOMCard() {
 	var length = (DECK_COM.length);
@@ -198,7 +193,6 @@ function getCOMCard() {
 	DECK_COM.splice(toPick, 1);
 	return toReturn
 }
-
 
 
 function drop2(ev) {
@@ -225,25 +219,3 @@ $(".ActiveCARDS").on("dblclick", function(){
 function doDamageToComputer(amount) {
 	alert("You did " + amount + " damage to com")
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
