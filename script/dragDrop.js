@@ -47,7 +47,6 @@ function drop1(ev) {
 		    $('#a1').html(findRightImg(data))
 			didEvolve = true;
 			output("EV", Pokemon)
-			//CALL COPY ENERGY CARDS() 
 		}
 
 	if(isCardEmpty_ONE)
@@ -56,11 +55,14 @@ function drop1(ev) {
 		ev.preventDefault();
 		output("D", Pokemon.name)
 		ev.target.appendChild(document.getElementById(data));
-		$(".INFO_ONE").html(displayInfo(Pokemon));
-		ACTIVE_POKEMON = Pokemon
-		if(didEvolve)
-			output("EV", Pokemon)
 		
+		ACTIVE_POKEMON = Pokemon
+		if(didEvolve) {
+			carryOverToNextForm(Pokemon)
+			output("EV", Pokemon)
+		}
+			
+		$(".INFO_ONE").html(displayInfo(Pokemon));
 	}
 	
 	clearHand()

@@ -43,12 +43,12 @@
  var Diglett = new Pokemon("Diglett", "Ground", 30, "Grass", 0, 9, "Dig", "Mud Slap", null);
  var Dugtrio = new Pokemon("Dugtrio", "Ground", 60, "Grass", 2, 36, "Slash", "Earthquake", "Diglett");
  var Meowth = new Pokemon("Meowth", "Normal", 50, "Fighting", 1, 15, "Payday", "Payday", null);
+ var Magikarp = new Pokemon("Magikarp", "Water", 30, "Lightning", 1, 8, "Tackle", "Flail", null);
+ var Gyarados = new Pokemon("Gyarados", "Water", 100, "Grass", 3, 41, "Dragon Rage", "Bubblebeam", "Magikarp");	//Moves Added tocase and Functions ==> Need to get status changer created
 
- 
  
  var Hitmonchan = new Pokemon("Hitmonchan", "Fighting", 70, "Psychic", 2, 33, "Jab", "Special Punch", null);
  var Alakazam = new Pokemon("Alakazam", "Psychic", 80, "Psychic", 3, 42, "POK\'E POWER", "Confuse Ray");
- var Gyarados = new Pokemon("Gyarados", "Water", 100, "Grass", 3, 41, "Dragon Rage", "Bubblebeam");	//Moves Added tocase and Functions ==> Need to get status changer created
  var Mewtwo = new Pokemon("Mewtwo", "Psychic", 60, "Psychic", 3, 53, "Psychic", "Barrier", null); 
  var Chansey = new Pokemon("Chansey", "Normal", 120, "Fighting", 3, 55, "Scrunhc", "Double-Edge", null); 
  var Arcanine = new Pokemon("Arcanine", "Fire", 100, "Water", 3, 45, "Flamerthrower", "Take-Down"); 
@@ -66,6 +66,7 @@ function Pokemon(name, type, hp, weakness, retreat, level, move1, move2, child) 
 	this.name = name;
 	this.type = type;
     this.hp = hp;
+	this.damageTaken = 0;
 	this.weakness = weakness;
 	this.retreat = retreat;
 	this.level = level;

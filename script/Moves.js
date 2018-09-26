@@ -2,10 +2,23 @@
 function doDamageToComputer(amount) {
 	setTimeout(function(){
 		$(".INFO_TWO").html(amount + " points of damage was done.")
-	}, 2200);
+	}, 1200);
 	setTimeout(function(){
 		output("COM")
-	}, 3800);
+		if(ACTIVE_POKEMON.hp == 0)
+			faintPlayer(1)
+	}, 2500);
+	
+	
+}
+
+function NotEnoughEnergys() {
+	setTimeout(function(){
+		$(".INFO_TWO").html("Not enough energy cards attached.")
+	}, 1200);
+	setTimeout(function(){
+		output("COM")
+	}, 2500);
 }
 
 
@@ -15,13 +28,17 @@ function doDamageToComputer(amount) {
 			if(Math.floor(Math.random() * 2) == 1)
 				ACTIVE_POKEMON.hp -= 10;
 			doDamageToComputer(30)
+		}else {
+			NotEnoughEnergys()
 		}
 			 
 	}
 
 	function GNAW() {
 		if(ACTIVE_POKEMON.eneryAttached >= 1)
-			doDamageToComputer(10) 
+			doDamageToComputer(10)
+		else 
+			NotEnoughEnergys()
 	}
 
 	function LULLABY() {
@@ -44,7 +61,9 @@ function doDamageToComputer(amount) {
 		if(waters >= 4) {
 			doDamageToComputer(40) 
 		   //statusChange("P", .5)
-		} 	
+		} else {
+			NotEnoughEnergys()
+		}		
 	}
 
 	function ROCK_THROW() {

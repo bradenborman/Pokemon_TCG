@@ -31,15 +31,30 @@ function faintPlayer(player) {
 			greyCards()
 			$("#ENERGY_CARDS1").html("")
 			output("SlotEmpty")
+			$("#btnMove1").text(" ");
+			$("#btnMove2").text(" ");
 }
 
 
 function takeDamage() {
 	var x = (Math.floor((Math.random() * 4) + 1) * 10);
 	output("TD", x)
+	ACTIVE_POKEMON.damageTaken += x
 	ACTIVE_POKEMON.hp -= x;
 	$(".INFO_ONE").html(displayInfo(ACTIVE_POKEMON));
 	
 	if(ACTIVE_POKEMON.hp <= 0)
 		faintPlayer(1)
+}
+
+function carryOverToNextForm(currentPokemon) {
+
+	var child = getPokemonData(currentPokemon.child) 
+	
+	currentPokemon.damageTaken += child.damageTaken
+	currentPokemon.hp -= currentPokemon.damageTaken
+	currentPokemon.eneryAttached = child.eneryAttached
+	currentPokemon.EnergyAdded = child.EnergyAdded
+	
+	
 }
