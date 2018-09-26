@@ -9,6 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css"  href="css/defualt.css" />
   <link rel="stylesheet"  href="css/Side_menu.css" />
+  <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
     <link rel="icon" href="imgs/logo.jpg">
   </head>
 <body onload="load()">
@@ -36,7 +37,7 @@
 		</div>
 		
 		<div class="Player_TWO_OPTIONS">
-					<button onclick="faintPlayer(1)">Faint Player 1</button>
+					<button onclick="statusChange()">Status Change</button>
 					<button onclick="draw(1)">Draw Card</button>
 					<button onclick="takeDamage()">Take Damage</button>
 					<button onclick="LoadAll()">Load All Cards</button>
@@ -45,19 +46,27 @@
 		
 			<div id="ENERGY_CARDS1"></div>
 			<div id="a1" ondrop="drop1(event)" ondragover="allowDrop(event)" class="Active_CARD_ONE CARD"></div>
+			<div class="STATUS1"></div>
+			
+			
 			
 			<div id="a2" class="Active_CARD_TWO CARD"></div>
 			
 			
 			<div class="INFO_ONE"></div>
 			<div class="INFO_TWO"></div>
-			
+			<div class="COMPUTER_INFO"></div>
 			
 			<div id="toggleHand" class="SHOW_HAND">
 			<span  onclick="openNav()" style="font-size: 2.8em;" class="glyphicon glyphicon-option-horizontal"></span>
 			<!--<button style="border-radius: 10px;" onclick="openNav()">SHOW HAND</button> -->
 			</div>
   </div>
+  
+  
+  
+  
+  
 
 <script src="script/PlayerOne_Deck.js"></script>
 <script src="script/sidenav.js"></script>

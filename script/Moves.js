@@ -5,11 +5,18 @@ function doDamageToComputer(amount) {
 	}, 1200);
 	setTimeout(function(){
 		output("COM")
-		if(ACTIVE_POKEMON.hp == 0)
+		if(ACTIVE_POKEMON.hp <= 0)
 			faintPlayer(1)
+		if(COMPUTER_POKEMON.hp <= 0) {
+			$(".Active_CARD_TWO").html(getCOMCard())
+			displayCOMPUTER()
+		}
+			
 	}, 2500);
 	
 	
+	COMPUTER_POKEMON.hp -= amount
+	displayCOMPUTER()
 }
 
 function NotEnoughEnergys() {
@@ -73,3 +80,29 @@ function NotEnoughEnergys() {
 	function HARDEN() {
 		//2 F => C
 	}
+
+	
+function addSleep() {
+	ACTIVE_POKEMON.status = " ASLEEP ;nbsp"
+	$(".STATUS1").html("ASLEEP");
+}
+
+function addPoison() {
+	ACTIVE_POKEMON.status = "POSIONED"
+	$(".STATUS1").html("POSIONED");
+}
+
+function addConfusion() {
+	ACTIVE_POKEMON.status = "CONFUSED"
+	$(".STATUS1").html("CONFUSED");
+}
+
+function addParalyzation() {
+	ACTIVE_POKEMON.status = "PARALYZED"
+	$(".STATUS1").html("PARALYZED");
+}
+
+function addParalyzation() {
+	ACTIVE_POKEMON.status = "Healthy"
+	$(".STATUS1").html("");
+}

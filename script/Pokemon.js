@@ -67,6 +67,7 @@ function Pokemon(name, type, hp, weakness, retreat, level, move1, move2, child) 
 	this.type = type;
     this.hp = hp;
 	this.damageTaken = 0;
+	this.status = "Healthy"
 	this.weakness = weakness;
 	this.retreat = retreat;
 	this.level = level;

@@ -56,5 +56,33 @@ function carryOverToNextForm(currentPokemon) {
 	currentPokemon.eneryAttached = child.eneryAttached
 	currentPokemon.EnergyAdded = child.EnergyAdded
 	
+}
+
+
+function statusChange() {
+	var x = (Math.floor((Math.random() * 5) + 1));
+	
+	if(x == 1)
+		addSleep()
+	else if(x == 2)
+		addPoison()
+	else if(x == 3)
+		addConfusion()
+	else if(x == 4)
+		$(".STATUS1").html("PARALYZED");
+	else 
+		removeStatus()
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+

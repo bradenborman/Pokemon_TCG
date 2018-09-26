@@ -7,6 +7,8 @@
  var ALLPOKEMON = []
  var PickedTpyes = [];
  var deckCopy=DECK.slice();
+ var COMPUTER_POKEMON = null
+ 
  
  function getPokemonData(name) {	
 	    for(var y = 0; y < ALLPOKEMON.length; y++)
@@ -194,35 +196,48 @@ function draw(player) {
 		greyCards()
 }
 
+
+
+/***********************************************************************************************/
+
  var DECK_COM = [
-	'<img id="card1" name="Charizard" ondragstart="drag(event)" draggable="true" src="imgs/back.jpg" />'
+	'<img id="card11" name="Jigglypuff" ondragstart="drag(event)" draggable="true" src="imgs/jigglypuff.jpg" />',
+	'<img id="card20" name="Chansey" ondragstart="drag(event)" draggable="true" src="imgs/chansey.jpg" />',
+	'<img id="card5" name="Hitmonchan" ondragstart="drag(event)" draggable="true" src="imgs/hitmonchan.jpg" />',
 ]
 
 function getCOMCard() {
+	
+	if(DECK_COM.length == 0)
+		alert("YOU WIN")
+	
 	var length = (DECK_COM.length);
 	var toPick = Math.floor((Math.random() * length) + 0);
 	var toReturn = DECK_COM[toPick]
+	
 	DECK_COM.splice(toPick, 1);
+		
+		for(var x = 0; x < ALLPOKEMON.length; x++) 
+			if(toReturn.includes(ALLPOKEMON[x].name))
+				COMPUTER_POKEMON = JSON.parse(JSON.stringify(ALLPOKEMON[x]));
+		
+		
+		displayCOMPUTER()
+		
 	return toReturn
 }
 
 
-function drop2(ev) {
-    if(isCardEmpty_TWO)
-	{
-	isCardEmpty_TWO = false
-	ev.preventDefault();
-	var name = ev.dataTransfer.getData("name");
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-	$(".INFO_TWO").text(name);
-	}else{
-		alert("Already Card")
-	}
-
+function displayCOMPUTER() {
+	
+	var Pokemon = COMPUTER_POKEMON
+	
+	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + Pokemon.hp + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"	
+	$(".COMPUTER_INFO").html(basicInfo);
 }
 
-$(".ActiveCARDS").on("dblclick", function(){
 
-	greyCards()
+
+$(".ActiveCARDS").on("dblclick", function(){
+	alert(COMPUTER_POKEMON.hp)
 });;
