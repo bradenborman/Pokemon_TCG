@@ -68,6 +68,7 @@
 	'<img id="card66" name="Dugtrio" ondragstart="drag(event)" draggable="true" src="imgs/dugtrio.jpg" />',
 	'<img id="card67" name="Meowth" ondragstart="drag(event)" draggable="true" src="imgs/meowth.jpg" />',
 	'<img id="card68" name="Magikarp" ondragstart="drag(event)" draggable="true" src="imgs/magikarp.jpg" />',
+	'<img id="card69" name="Psychic" ondragstart="drag(event)" draggable="true" src="imgs/psychic.jpg" />',
 ]
 
 

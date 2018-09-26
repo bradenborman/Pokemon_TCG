@@ -1,8 +1,8 @@
 
 function getAttack(attack) {
-	
+
 	switch(attack) {
-		
+			
 		case "Rock Throw":
 			ROCK_THROW()
 			break;
@@ -34,7 +34,19 @@ function getAttack(attack) {
 		case "Thunder Jolt":
 			THUNDER_JOLT()
 			break;
-			
+		
+		case "Confuse Ray":
+			CONFUSE_RAY()
+			break;
+
+		case "Do the Wave":
+			DO_THE_WAVE()
+			break;
+
+		case "Poison Sting":
+			POISON_STING()
+			break;
+	
 		default:
 			
 	}

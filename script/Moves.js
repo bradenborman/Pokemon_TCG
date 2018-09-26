@@ -10,6 +10,7 @@ function doDamageToComputer(amount) {
 		if(COMPUTER_POKEMON.hp <= 0) {
 			$(".Active_CARD_TWO").html(getCOMCard())
 			displayCOMPUTER()
+			COMPUTER_POKEMON.status = "Healthy"
 		}
 			
 	}, 2500);
@@ -40,6 +41,18 @@ function NotEnoughEnergys() {
 		}
 			 
 	}
+	
+	function POISON_STING() {
+		var Grass = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Grass").length;
+		if(Grass >= 1) {
+			if(Coinflip())
+				addSleep(2)
+			doDamageToComputer(10)
+		}else {
+			NotEnoughEnergys()
+		}
+			
+	}
 
 	function GNAW() {
 		if(ACTIVE_POKEMON.eneryAttached >= 1)
@@ -49,10 +62,20 @@ function NotEnoughEnergys() {
 	}
 
 	function LULLABY() {
-		if(ACTIVE_POKEMON.eneryAttached >= 1) { }
-			//statusChange("S", 1)
+		if(ACTIVE_POKEMON.eneryAttached >= 1)
+			addSleep(2)
+		else 
+			NotEnoughEnergys()
 	}
 
+	function DO_THE_WAVE() {
+		if(ACTIVE_POKEMON.eneryAttached >= 3) 
+			doDamageToComputer(10)
+		else 
+			NotEnoughEnergys()
+			
+	}
+	
 	function POUND() {
 		if(ACTIVE_POKEMON.eneryAttached >= 2) 
 			doDamageToComputer(20) 	
@@ -81,10 +104,40 @@ function NotEnoughEnergys() {
 		//2 F => C
 	}
 
+	function CONFUSE_RAY() {
+		var PScards = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Psychic").length;
+		if(PScards >= 3) {
+			if(Math.floor(Math.random() * 2) == 1)
+				addConfusion(2)
+			doDamageToComputer(30)
+		}else {
+			NotEnoughEnergys()
+		}
+	}
+
 	
-function addSleep() {
-	ACTIVE_POKEMON.status = " ASLEEP ;nbsp"
-	$(".STATUS1").html("ASLEEP");
+	
+	
+	
+	
+	
+	
+	
+function Coinflip() {
+	return (Math.floor(Math.random() * 2) == 1)
+			
+}
+	
+
+	
+function addSleep(player) {
+	if(player == 1) {
+		ACTIVE_POKEMON.status = "ASLEEP"
+		$(".STATUS1").html("ASLEEP");
+	}else{
+		COMPUTER_POKEMON.status = "ASLEEP"
+		$(".STATUS2").html("ASLEEP");
+	}
 }
 
 function addPoison() {
@@ -92,9 +145,14 @@ function addPoison() {
 	$(".STATUS1").html("POSIONED");
 }
 
-function addConfusion() {
-	ACTIVE_POKEMON.status = "CONFUSED"
-	$(".STATUS1").html("CONFUSED");
+function addConfusion(player) {
+	if(player == 1) {
+		ACTIVE_POKEMON.status = "CONFUSED"
+		$(".STATUS1").html("CONFUSED");
+	}else{
+		COMPUTER_POKEMON.status = "CONFUSED"
+		$(".STATUS2").html("CONFUSED");
+	}
 }
 
 function addParalyzation() {

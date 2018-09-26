@@ -10,7 +10,7 @@
  var Caterpie = new Pokemon("Caterpie", "Grass", 40, "Fire", 1, 13, "String Shot", "String Shot", null);
  var Metapod = new Pokemon("Metapod", "Grass", 70, "Fire", 2, 21, "Stiffen", "Stun Spore", "Caterpie");
  var Butterfree = new Pokemon("Butterfree", "Grass", 70, "Fire", 0, 28, "Whirlwind", "Mega Drain", "Metapod");
- var Weedle = new Pokemon("Weedle", "Grass", 40, "Fire", 1, 12, "Posion Sting", "Posion Sting", null);
+ var Weedle = new Pokemon("Weedle", "Grass", 40, "Fire", 1, 12, "Poison Sting", "Posion Sting", null);
  var Kakuna = new Pokemon("Kakuna", "Grass", 80, "Fire", 2, 23, "Stiffen", "Poisonpowder", "Weedle");
  var Beedrill = new Pokemon("Beedrill", "Grass", 80, "Fire", 0, 32, "Twineedle", "Posion Sting", "Kakuna");
  var Pidgey = new Pokemon("Pidgey", "Normal", 40, "Lightning", 1, 8, "Whirlwind", "Whirlwind", null);

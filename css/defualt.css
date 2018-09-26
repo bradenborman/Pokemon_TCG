@@ -173,6 +173,22 @@ body, html {
 }
 
 
+.STATUS2 {
+	position: absolute;
+	bottom: 470px;
+	font-size: 1.6em;
+	text-align: center;
+	width: 60px;
+	right: 40%;
+	padding: 4px;
+	 -ms-transform: rotate(-25deg); /* IE 9 */
+    -webkit-transform: rotate(-25deg); /* Safari 3-8 */
+    transform: rotate(-25deg);
+	font-family: 'Rubik Mono One';
+	z-index: 55;
+}
+
+
 
 
 
