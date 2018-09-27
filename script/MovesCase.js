@@ -46,7 +46,55 @@ function getAttack(attack) {
 		case "Poison Sting":
 			POISON_STING()
 			break;
+			
+		case "Bite":
+			BITE()
+			break;
+			
+		case "Withdraw":
+			WITHDRAW()
+			break;
+			
+		case "Confuse Ray":
+			CONFUSE_RAY()()
+			break;
 	
+		case "Solarbeam":
+			SOLARBEAM()()
+			break;
+			
+		case "Bubble":
+			BUBBLE()
+			break;
+			
+		case "Peck":
+			PECK()
+			break;
+	
+		case "Mirror Move":
+			MIRROR_MOVE()
+			break;
+	
+		case "Slash":
+			SLASH()
+			break;
+			
+		case "Fury Swipes":
+			FURY_SWIPES()
+			break;
+	
+		case "Sand-attack":
+			SAND_ATTACK()
+			break;
+			
+		case "Bite":
+			BITE()
+			break;
+			
+		case "Super Fang":
+			SUPER_FANG()
+			break;	
+		
 		default:
 			
 	}

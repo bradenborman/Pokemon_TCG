@@ -116,13 +116,145 @@ function NotEnoughEnergys() {
 	}
 
 	
+	function WITHDRAW() {
+		var w = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Water").length;
+		if(ACTIVE_POKEMON.eneryAttached >= 2 && w >= 1) {
+			if(Coinflip()) {
+				console.log("STILL NEEDS A NEW VAR")//PREVENT VAR HERE
+			}
+		} else 
+			NotEnoughEnergys()
+		
+	}
+	
+	function BITE() {
+		
+		if(ACTIVE_POKEMON.name == "Wartortle") { 
+		var w = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Water").length;
+		if(ACTIVE_POKEMON.eneryAttached >= 3 && w >= 1)
+			doDamageToComputer(40)
+		else 
+			NotEnoughEnergys()
+		}
+		else if(ACTIVE_POKEMON.name == "Rattata" || ACTIVE_POKEMON.name == "Raticate") { //rattata
+				if(ACTIVE_POKEMON.eneryAttached >= 1 ) {
+					doDamageToComputer(20)
+				}
+				else 
+					NotEnoughEnergys()
+		}
+		
+	}
+	
+	
+	function CONFUSE_RAY() {
+		var f = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Fire").length;
+		if(f >= 2) {
+			if(Coinflip())
+				addConfusion(2)
+			doDamageToComputer(10)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	function SOLARBEAM() {
+		if(ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Grass").length >= 4) {
+			doDamageToComputer(60)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	function BUBBLE() {
+		if(ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Water").length >= 1) {
+			if(Coinflip())
+				addParalyzation(2)
+			doDamageToComputer(10)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	function WITHDRAW() {
+		if(ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Water").length >= 1) {
+			if(Coinflip())
+				addParalyzation(2)
+			doDamageToComputer(10)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+		
+	function PECK() {
+		if(ACTIVE_POKEMON.eneryAttached >= 1 ) {
+			doDamageToComputer(10)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	function MIRROR_MOVE() {
+		if(ACTIVE_POKEMON.eneryAttached >= 3 ) {
+			console.log("NEED TO SET UP PAST DAMAGE VAR")//VAR HERE
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	function SLASH() {
+		if(ACTIVE_POKEMON.eneryAttached >= 2 ) 
+			doDamageToComputer(20)
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	function FURY_SWIPES() {
+		if(ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Fighting").length >= 2) {
+			var x = 0
+			for(var t = 0; t < 3; t++)
+				if(Coinflip())
+					x++
+		
+			doDamageToComputer(20 * x)
+					
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	
+	function SAND_ATTACK() {
+		if(ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Fighting").length >= 1) {
+			if(Coinflip)
+				console.log("CHANGE PREVENT ATTACK NEXT TIME = true") //VAR HERE
+			doDamageToComputer(10)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	function SUPER_FANG() {
+		if(ACTIVE_POKEMON.eneryAttached >= 3) {
+			doDamageToComputer(Math.ceil(((COMPUTER_POKEMON.hp / 2) / 10)) * 10)
+		}
+		else 
+			NotEnoughEnergys()
+	}
 	
 	
 	
 	
 	
 	
-	
+
 function Coinflip() {
 	return (Math.floor(Math.random() * 2) == 1)
 			

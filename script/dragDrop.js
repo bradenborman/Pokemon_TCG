@@ -232,12 +232,13 @@ function getCOMCard() {
 function displayCOMPUTER() {
 	
 	var Pokemon = COMPUTER_POKEMON
-	
 	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + Pokemon.hp + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"	
 	$(".COMPUTER_INFO").html(basicInfo);
 	
 	if(COMPUTER_POKEMON.status != "Healthy")
-	$(".STATUS2").html(COMPUTER_POKEMON.status.toString());
+		$(".STATUS2").html(COMPUTER_POKEMON.status.toString());
+	else
+		$(".STATUS2").html("");
 	
 }
 
