@@ -95,6 +95,33 @@ function getAttack(attack) {
 			SUPER_FANG()
 			break;	
 		
+		case "Agility":
+			AGILITY()
+			break;	
+		
+		case "Thunder":
+			THUNDER()
+			break;	
+		
+		case "Whirlwind":
+			WHIRLWIND()
+			break;	
+			
+		case "Wing Attack":
+			WINGATTACK()
+			break;		
+		
+		case "Hurricane":
+			HURRICANE()
+			break;		
+			
+		case "Spore":
+			addSleep(2)
+			break;	
+			
+			
+			
+		
 		default:
 			
 	}

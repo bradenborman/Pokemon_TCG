@@ -12,46 +12,25 @@
   <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
     <link rel="icon" href="imgs/logo.jpg">
   </head>
-<body onload="load()">
-
-  
-  <div id="mySidenav" class="sidenav">
+<body onload="load()"><div id="mySidenav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <div id="CARDS_IN_HAND"><div class="hand"></div><div class="hand"></div><div class="hand"></div><div class="hand"></div><div class="hand"></div><div class="hand"></div> </div>
 </div>
-  
 <div class="ActiveCARDS">
-
-		<div class="Player_ONE_OPTIONS">
-					<button id="btnMove1" onclick="Fight1()">Move Set One</button>
-					<button id="btnMove2" onclick="Fight2()">Move Set Two</button>
-		</div>
-		
+		<div class="Player_ONE_OPTIONS"><button id="btnMove1" onclick="Fight1()">Move Set One</button><button id="btnMove2" onclick="Fight2()">Move Set Two</button></div>
 		<div class="Player_TWO_OPTIONS">
-					<button onclick="statusChange()">Status Change</button>
-					<button onclick="draw(1)">Draw Card</button>
-					<button onclick="takeDamage()">Take Damage</button>
-					<button onclick="LoadAll()">Load All Cards</button>
+				<button onclick="statusChange()">Status Change</button>
+				<button onclick="draw(1)">Draw Card</button>
+				<button onclick="takeDamage()">Take Damage</button>
+				<button onclick="LoadAll()">Load All Cards</button>
 		</div>
-	
-			<div id="ENERGY_CARDS1"></div>
-			<div id="a1" ondrop="drop1(event)" ondragover="allowDrop(event)" class="Active_CARD_ONE CARD"></div>
-			<div class="STATUS1"></div>
-			<div class="STATUS2"></div>
-					
-			<div id="a2" class="Active_CARD_TWO CARD"></div>
-					
-			<div class="INFO_ONE"></div>
-			<div class="INFO_TWO"></div>
-			<div class="COMPUTER_INFO"></div>
-			
-			<div id="toggleHand" class="SHOW_HAND">
-			<span  onclick="openNav()" style="font-size: 2.8em;" class="glyphicon glyphicon-option-horizontal"></span>
-			<!--<button style="border-radius: 10px;" onclick="openNav()">SHOW HAND</button> -->
-			</div>
-  </div>
-  
-  
+		<div id="ENERGY_CARDS1"></div>
+				<div id="a1" ondrop="drop1(event)" ondragover="allowDrop(event)" class="Active_CARD_ONE CARD"></div><div class="STATUS1"></div><div class="STATUS2"></div>	
+				<div id="a2" class="Active_CARD_TWO CARD"></div><div class="INFO_ONE"></div><div class="INFO_TWO"></div><div class="COMPUTER_INFO"></div>
+		<div id="toggleHand" class="SHOW_HAND"><span  onclick="openNav()" style="font-size: 2.8em;" class="glyphicon glyphicon-option-horizontal"></span>
+		<!--<button style="border-radius: 10px;" onclick="openNav()">SHOW HAND</button> -->
+		</div>
+</div>
 <script src="script/PlayerOne_Deck.js"></script>
 <script src="script/sidenav.js"></script>
 <script src="script/dragDrop.js"></script>
@@ -61,6 +40,5 @@
 <script src="script/ACTIONS.js"></script>
 <script src="script/Evolution.js"></script>
 <script src="script/output.js"></script>
-
 </body>
 </html>

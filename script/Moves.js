@@ -34,7 +34,7 @@ function NotEnoughEnergys() {
 		var Ele = ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Lightning").length;
 		if(ACTIVE_POKEMON.eneryAttached >= 2 && Ele >= 1) {
 			if(Math.floor(Math.random() * 2) == 1)
-				ACTIVE_POKEMON.hp -= 10;
+				takeDamage(10)
 			doDamageToComputer(30)
 		}else {
 			NotEnoughEnergys()
@@ -207,8 +207,9 @@ function NotEnoughEnergys() {
 	
 	
 	function SLASH() {
+	amt = ACTIVE_POKEMON.name == "Parasect" ? 30 : 20		
 		if(ACTIVE_POKEMON.eneryAttached >= 2 ) 
-			doDamageToComputer(20)
+			doDamageToComputer(amt)
 		else 
 			NotEnoughEnergys()
 	}
@@ -248,6 +249,62 @@ function NotEnoughEnergys() {
 		else 
 			NotEnoughEnergys()
 	}
+	
+	
+	function AGILITY() {
+		if(ACTIVE_POKEMON.eneryAttached >= 3 && ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Lightning").length >= 1) {
+			if(Coinflip)
+				console.log("PREVENT ALL DAMAGE and EFFECTS NEXT TURN") //VAR HERE
+			doDamageToComputer(20)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	function THUNDER() {
+		if(ACTIVE_POKEMON.eneryAttached >= 4 && ACTIVE_POKEMON.EnergyAdded.filter(c => c === "Lightning").length >= 3) {
+			if(Coinflip)
+				takeDamage(30)
+			doDamageToComputer(60)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	function WHIRLWIND() {
+	amt = ACTIVE_POKEMON.name == "Pidgeotto" ? 20 : 10	
+		if(ACTIVE_POKEMON.eneryAttached >= 2) {
+			doDamageToComputer(amt)
+			console.log("SWAP WITH BENCH if there is one") //VAR HERE
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+	function WINGATTACK() {
+		if(ACTIVE_POKEMON.eneryAttached >= 2) {
+			doDamageToComputer(20)
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
+
+		
+	function HURRICANE() {
+		if(ACTIVE_POKEMON.eneryAttached >= 3) {
+			doDamageToComputer(30)
+			console.log("RETURN cards to hand") //VAR HERE
+		}
+		else 
+			NotEnoughEnergys()
+	}
+	
+	
 	
 	
 	

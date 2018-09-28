@@ -36,8 +36,11 @@ function faintPlayer(player) {
 }
 
 
-function takeDamage() {
+function takeDamage(y) {
 	var x = (Math.floor((Math.random() * 4) + 1) * 10);
+	if(y != null)
+		x = y
+	
 	output("TD", x)
 	ACTIVE_POKEMON.damageTaken += x
 	ACTIVE_POKEMON.hp -= x;
