@@ -26,7 +26,7 @@
  var Raichu = new Pokemon("Raichu", "Lightning", 80, "Fighting", 1, 40, "Agility", "Thunder", "Pikachu");
  var Sandshrew = new Pokemon("Sandshrew", "Ground", 40, "Grass", 1, 12, "Sand-attack", "Sand-attack", null);
  var Sandslash = new Pokemon("Sandslash", "Ground", 70, "Grass", 1, 33, "Slash", "Fury Swipes", "Sandshrew");
- var Nidoranb = new Pokemon("Nidoranb", "Grass", 40, "Psychic", 1, 20, "Horn Harzard", "Horn Harzard", null); 
+ var Nidoranb = new Pokemon("Nidoranb", "Grass", 40, "Psychic", 1, 20, "Horn Hazard", "Horn Hazard", null); 
  var Nidorino = new Pokemon("Nidorino", "Grass", 60, "Psychic", 1, 25, "Double Kick", "Horn Drill", "Nidoranb"); 
  var Nidoking = new Pokemon("Nidoking", "Grass", 90, "Psychic", 3, 48, "Thrash", "Toxic", "Nidorino"); 
  var Nidoranbg = new Pokemon("Nidorang", "Grass", 60, "Psychic", 1, 13, "Fury Swipes", "Call for Family", null); 
@@ -50,7 +50,7 @@
  var Hitmonchan = new Pokemon("Hitmonchan", "Fighting", 70, "Psychic", 2, 33, "Jab", "Special Punch", null);
  var Alakazam = new Pokemon("Alakazam", "Psychic", 80, "Psychic", 3, 42, "POK\'E POWER", "Confuse Ray");
  var Mewtwo = new Pokemon("Mewtwo", "Psychic", 60, "Psychic", 3, 53, "Psychic", "Barrier", null); 
- var Chansey = new Pokemon("Chansey", "Normal", 120, "Fighting", 3, 55, "Scrunhc", "Double-Edge", null); 
+ var Chansey = new Pokemon("Chansey", "Normal", 120, "Fighting", 3, 55, "Schrunch", "Double-Edge", null); 
  var Arcanine = new Pokemon("Arcanine", "Fire", 100, "Water", 3, 45, "Flamerthrower", "Take-Down"); 
  var Onix = new Pokemon("Onix", "Ground", 90, "Grass", 3, 12, "Rock Throw", "Harden", null); 
 
