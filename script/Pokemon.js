@@ -1,5 +1,5 @@
  var Bulbasaur = new Pokemon("Bulbasaur", "Grass", 40, "Fire", 1, 13, "Leech Seed", "Leech Seed", null);
- var Ivysaur = new Pokemon("Ivysaur", 60, "Grass", "Fire", 1, 20, "Vine Whip", "Poisonpowder", "Bulbasaur");
+ var Ivysaur = new Pokemon("Ivysaur", "Grass", 60, "Fire", 1, 20, "Vine Whip", "Poisonpowder", "Bulbasaur");
  var Venusaur = new Pokemon("Venusaur", "Grass", 100, "Fire", 2, 67, "POK\'E POWER", "Solarbeam", "Ivysaur");
  var Squirtle = new Pokemon("Squirtle", "Water", 40, "Lightning", 1, 8, "Bubble", "Withdraw", null);
  var Wartortle = new Pokemon("Wartortle", "Water", 70, "Lightning", 1, 22, "Withdraw", "Bite", "Squirtle");

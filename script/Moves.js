@@ -1,5 +1,8 @@
 
 function doDamageToComputer(amount) {
+	
+	amount = weaknessAdjuster(amount, ACTIVE_POKEMON.type, COMPUTER_POKEMON.type)
+	
 	setTimeout(function(){
 		$(".INFO_TWO").html(amount + " points of damage was done.")
 	}, 1200);

@@ -80,6 +80,49 @@ function statusChange() {
 
 
 
+function weaknessAdjuster(amount, x, y) {
+		
+
+		alert(amount + " " + x + " " + y)
+		
+		if(x == "Grass" && y == "Ground")
+			amount += 30
+
+		else if(x == "Water")
+		{
+			if(y == "Fire")
+				 amount += 30
+		}
+		else if(x == "Fire")
+		{
+			if(y == "Grass")
+				 amount += 30
+		}	
+		else if(x == "Lightning")
+		{
+			if(y == "Water")
+				 amount += 30
+		}		
+		else if(x == "Fighting" || x == "Ground")
+		{
+			if(y == "Normal")
+				 amount += 30
+		}				
+		else if(x == "Psychic")
+		{
+			if(y == "Grass" || y == "Fighting")
+				 amount += 30
+			else
+				 amount -= 30
+		}		
+		
+	
+	if(amount < 0)
+		amount = 0
+	
+		return amount
+		
+}
 
 
 
