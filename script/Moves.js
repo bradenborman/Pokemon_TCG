@@ -22,6 +22,7 @@ function doDamageToComputer(amount) {
 	}, 2500);
 	
 	isPlayerOneTurn = false;
+	changeTurns()
 	COMPUTER_POKEMON.hp -= amount
 	displayCOMPUTER()
 }
@@ -36,6 +37,8 @@ function NotEnoughEnergys() {
 	}, 2500);
 	
 	isPlayerOneTurn = false;
+	changeTurns()
+	
 	
 }
 

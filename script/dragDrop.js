@@ -35,8 +35,9 @@ function drop1(ev) {
 	var isValidE = false;
 	var didEvolve = false;
 	
-	if(Pokemon.isEnergy) //&& !isEnergyAlreadyAdded
+	if(Pokemon.isEnergy && !isEnergyAlreadyAdded)
 	{
+		closeNav()
 		isEnergyAlreadyAdded = true;
 		addEnergy(ACTIVE_POKEMON, Pokemon)
 		ev.preventDefault();
@@ -187,12 +188,16 @@ function getCard() {
 }
 
 function LoadAll() {
-	do {draw(1)} 
+	
+	do {
+		hasAlreadyDrawn = false
+		draw(1)
+	} 
 	while(DECK.length != 0)
 }
 
 function draw(player) {
-		if(player == 1 && DECK.length > 0) { //&& !hasAlreadyDrawn
+		if(player == 1 && DECK.length > 0 && !hasAlreadyDrawn) { //&& !hasAlreadyDrawn
 			document.getElementById("CARDS_IN_HAND").innerHTML += '<div class="hand">' + getCard() +  '</div>'
 			hasAlreadyDrawn = true;
 		}	
@@ -248,5 +253,5 @@ function displayCOMPUTER() {
 
 
 $(".ActiveCARDS").on("dblclick", function(){
-	alert(COMPUTER_POKEMON.status)
+	
 });;

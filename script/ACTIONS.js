@@ -1,19 +1,13 @@
 	
 
 function Fight1() {
-		if(isPlayerOneTurn) {	
-			isEnergyAlreadyAdded = false;
-			hasAlreadyDrawn = false;	
+		if(isPlayerOneTurn) 	
 			getAttack(ACTIVE_POKEMON.move1)
-		}
 	}
 
 function Fight2() {
-	if(isPlayerOneTurn) {		
-		isEnergyAlreadyAdded = false;
-		hasAlreadyDrawn = false;
+	if(isPlayerOneTurn) 
 		getAttack(ACTIVE_POKEMON.move2)
-	}
 }
 
 function faintPlayer(player) {
@@ -126,6 +120,17 @@ function weaknessAdjuster(amount, x, y) {
 
 
 
+function changeTurns() {
+	$("#btnMove2").fadeToggle("slow");
+	$("#btnMove1").fadeToggle("slow");
+	
+	if(isPlayerOneTurn) {
+		hasAlreadyDrawn = false
+		isEnergyAlreadyAdded = false
+		draw(1)
+	}
+	
+}
 
 
 
@@ -136,6 +141,7 @@ function COMPUTERS_TURN_START() {
 	setTimeout(function(){
 		takeDamage(10)
 		isPlayerOneTurn = true;
+		changeTurns()
 	}, 2500);
 		
 }
