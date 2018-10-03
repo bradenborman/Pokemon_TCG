@@ -1,16 +1,19 @@
 	
 
 function Fight1() {
-		isEnergyAlreadyAdded = false;
-		hasAlreadyDrawn = false;	
-		getAttack(ACTIVE_POKEMON.move1)
-		
+		if(isPlayerOneTurn) {	
+			isEnergyAlreadyAdded = false;
+			hasAlreadyDrawn = false;	
+			getAttack(ACTIVE_POKEMON.move1)
+		}
 	}
 
 function Fight2() {
-	isEnergyAlreadyAdded = false;
-	hasAlreadyDrawn = false;
-	getAttack(ACTIVE_POKEMON.move2)
+	if(isPlayerOneTurn) {		
+		isEnergyAlreadyAdded = false;
+		hasAlreadyDrawn = false;
+		getAttack(ACTIVE_POKEMON.move2)
+	}
 }
 
 function faintPlayer(player) {
@@ -82,36 +85,33 @@ function statusChange() {
 
 function weaknessAdjuster(amount, x, y) {
 		
-
-		alert(amount + " " + x + " " + y)
-		
 		if(x == "Grass" && y == "Ground")
-			amount += 30
+			amount += amount
 
 		else if(x == "Water")
 		{
 			if(y == "Fire")
-				 amount += 30
+				 amount += amount
 		}
 		else if(x == "Fire")
 		{
 			if(y == "Grass")
-				 amount += 30
+				 amount += amount
 		}	
 		else if(x == "Lightning")
 		{
 			if(y == "Water")
-				 amount += 30
+				amount += amount
 		}		
 		else if(x == "Fighting" || x == "Ground")
 		{
 			if(y == "Normal")
-				 amount += 30
+				 amount += amount
 		}				
 		else if(x == "Psychic")
 		{
 			if(y == "Grass" || y == "Fighting")
-				 amount += 30
+				 amount += amount
 			else
 				 amount -= 30
 		}		
@@ -127,6 +127,18 @@ function weaknessAdjuster(amount, x, y) {
 
 
 
+
+
+function COMPUTERS_TURN_START() {
+	
+	
+	
+	setTimeout(function(){
+		takeDamage(10)
+		isPlayerOneTurn = true;
+	}, 2500);
+		
+}
 
 
 

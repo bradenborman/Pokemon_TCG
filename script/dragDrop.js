@@ -8,6 +8,9 @@
  var PickedTpyes = [];
  var deckCopy=DECK.slice();
  var COMPUTER_POKEMON = null
+ var isPlayerOneTurn = true;
+ 
+ 
  
  
  function getPokemonData(name) {	

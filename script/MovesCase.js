@@ -297,7 +297,6 @@ function getAttack(attack) {
 			TAKE_DOWN()
 			break	
 			
-			
 		default:	
 			
 	}

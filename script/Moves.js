@@ -13,12 +13,15 @@ function doDamageToComputer(amount) {
 		if(COMPUTER_POKEMON.hp <= 0) {
 			$(".Active_CARD_TWO").html(getCOMCard())
 			displayCOMPUTER()
-			COMPUTER_POKEMON.status = "Healthy"
+			COMPUTER_POKEMON.status = "Healthy"			
 		}
-			
+		
+
+		COMPUTERS_TURN_START()
+		
 	}, 2500);
 	
-	
+	isPlayerOneTurn = false;
 	COMPUTER_POKEMON.hp -= amount
 	displayCOMPUTER()
 }
@@ -28,8 +31,12 @@ function NotEnoughEnergys() {
 		$(".INFO_TWO").html("Not enough energy cards attached.")
 	}, 1200);
 	setTimeout(function(){
+		COMPUTERS_TURN_START()
 		output("COM")
 	}, 2500);
+	
+	isPlayerOneTurn = false;
+	
 }
 
 
