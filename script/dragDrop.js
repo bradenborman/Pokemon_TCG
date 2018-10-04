@@ -87,7 +87,9 @@ function addEnergy(Pokemon, energyCard) {
 
 
 function displayInfo(Pokemon) {
-	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + Pokemon.hp + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"
+	var damage = Pokemon.hp <= 30 ?  "<span style='color: orange;'>" + Pokemon.hp + "</span>" : "<span style='color: green;'>" + Pokemon.hp + "</span>"
+	
+	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + damage + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"
 	$("#btnMove1").text(Pokemon.move1);
 	$("#btnMove2").text(Pokemon.move2);
 	
@@ -240,7 +242,10 @@ function getCOMCard() {
 function displayCOMPUTER() {
 	
 	var Pokemon = COMPUTER_POKEMON
-	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + Pokemon.hp + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"	
+	var damage = Pokemon.hp <= 30 ?  "<span style='color: orange;'>" : "<span style='color: green;'>" 
+	
+	
+	var basicInfo = "<b><span style='font-size: 2em'>" + Pokemon.name + "</span></b><br>Level: <i>" + Pokemon.level + "</i><br>HP Remaining: <i><b>" + damage + Pokemon.hp + " </span>" + "</b></i><br>Weakness: <i>" + Pokemon.weakness + "</i>"	
 	$(".COMPUTER_INFO").html(basicInfo);
 	
 	if(COMPUTER_POKEMON.status != "Healthy")
